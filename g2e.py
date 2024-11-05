@@ -14,7 +14,6 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 # just set USE_GPXZ to False
 
 # --- Configuration Variables ---
-GPX_FILE = sys.argv[1]
 PLOT_DATA = True
 HIKER_MASS = 80
 USE_GPXZ = True
@@ -110,7 +109,9 @@ def calculate_calories(gpx_path, mass, api_key, batch_size):
     
     # Fallback to original data
     if df['elevation_gpxz'].isnull().any():
-        if USE_GPXZ:
+        if GPXZ_API_KEY == "insert your API key here":
+            print("You don't have an API key! Using the original data")
+        if USE_GPXZ and GPXZ_API_KEY != "insert your API key here":
             print("Using original elevation data due to errors fetching from GPXZ or missing data.")
         else:
             print("skipping gpxz")
@@ -136,6 +137,7 @@ def calculate_calories(gpx_path, mass, api_key, batch_size):
     return total_calories, df, J, C
     
 # calling the functions
+GPX_FILE = sys.argv[1]
 total_calories, df, J, C = calculate_calories(GPX_FILE, HIKER_MASS, GPXZ_API_KEY, GPXZ_BATCH_SIZE)
 if total_calories is not None:
     print("")
