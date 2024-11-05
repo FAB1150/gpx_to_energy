@@ -12,4 +12,6 @@ Take a look at the settings first! you can:
  - decide if you want to use gpxz (and set your API key)
  - show the graph or not (default, yes)
  - and a few other things.
-Usage: python g2e.py filename.gpx
+
+Usage:
+```python g2e.py filename.gpx```
