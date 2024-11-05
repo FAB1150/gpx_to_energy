@@ -7,4 +7,5 @@ https://www.gpxz.io/
 It is heavily inspired by this article, I put together the code and added some cool stuff to it :D
 https://www.gpxz.io/blog/hiking-energy-expenditure
 
+Take a look at the settings first! you can set your weight, and a few other things.
 Usage: python g2e.py filename.gpx
