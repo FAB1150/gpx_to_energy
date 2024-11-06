@@ -141,7 +141,9 @@ GPX_FILE = sys.argv[1]
 total_calories, df, J, C = calculate_calories(GPX_FILE, HIKER_MASS, GPXZ_API_KEY, GPXZ_BATCH_SIZE)
 if total_calories is not None:
     print("")
-    print(f"Total calories burned: {total_calories}")
+    print(f"Total calories used: {round(total_calories, 2)}")
+    print(f"Total Joules used: {round(sum(J), 2)}")
+    print(f"Wh used: {round(sum(J)/3600, 2)}")
 
 # Drawing the nice plot
 if PLOT_DATA:
