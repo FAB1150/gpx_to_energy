@@ -109,9 +109,9 @@ def calculate_calories(gpx_path, mass, api_key, batch_size):
     
     # Fallback to original data
     if df['elevation_gpxz'].isnull().any():
-        if GPXZ_API_KEY == "insert your API key here":
+        if USE_GPXZ and GPXZ_API_KEY == "insert your API key here":
             print("You don't have an API key! Using the original data")
-        if USE_GPXZ and GPXZ_API_KEY != "insert your API key here":
+        elif USE_GPXZ and GPXZ_API_KEY != "insert your API key here":
             print("Using original elevation data due to errors fetching from GPXZ or missing data.")
         else:
             print("skipping gpxz")
