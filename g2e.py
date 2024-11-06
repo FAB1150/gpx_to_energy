@@ -148,10 +148,10 @@ if PLOT_DATA:
     # Calculate cumulative distance for x-axis
     df['cumulative_distance'] = df['distance'].cumsum() / 1000  # in km
     
-    # Plotting Calorie Expenditure Rate and Elevation Profile
+    # Plotting power consumption rate and Elevation Profile
     fig, ax1 = plt.subplots(figsize=(10, 5))  # Adjust figure size as needed
      
-    # Calorie expenditure rate as a moving average
+    # Power used by your legs rate as a moving average
     smoothing_value = 1  # Adjust window size for smoothing
     df['power'] = (df['duration'] * 0).fillna(0)
     df['power'] = J.rolling(window=smoothing_value, center=True).mean()/df['duration']
@@ -165,6 +165,6 @@ if PLOT_DATA:
     ax2.fill_between(df['cumulative_distance'], df['elevation_gpxz'], color='lightgray', alpha=0.5, label="elevation profile") # Added color
     
     # Show the plot and the labels
-    plt.title('Calorie Expenditure and Elevation Profile') # Added a title
+    plt.title('Power consumption and Elevation Profile') # Added a title
     fig.legend(loc="upper right", bbox_to_anchor=(1,1), bbox_transform=ax1.transAxes) # Added bbox_to_anchor
     plt.show()
