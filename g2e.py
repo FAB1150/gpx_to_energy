@@ -15,7 +15,7 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 # --- Configuration Variables ---
 PLOT_DATA = True
-HIKER_MASS = 80
+HIKER_MASS = 80 # Put your weight in kg here
 USE_GPXZ = True
 GPXZ_API_KEY = "insert your API key here"  # Replace with your API Key
 GPXZ_BATCH_SIZE = 50
